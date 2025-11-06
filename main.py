@@ -3,10 +3,12 @@ import random
 from fastapi import FastAPI, HTTPException, Request
 from pydantic import BaseModel
 import uvicorn
+from pathlib import Path
 
 # --- Configuration ---
-RESTART_POOL_FILE = "server_2.json"
-REPORT_POOL_FILE = "server_1.json"
+BASE_DIR = Path(__file__).resolve().parent
+RESTART_POOL_FILE = BASE_DIR / "server_2.json"
+REPORT_POOL_FILE = BASE_DIR / "server_1.json"
 RESTART_POOL = []
 REPORT_POOL = []
 CRITICAL_SERVER_IDS = set()
