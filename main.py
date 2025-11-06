@@ -41,10 +41,10 @@ def load_data_pools():
     except FileNotFoundError:
         print(f"Error: Could not find '{RESTART_POOL_FILE}' or '{REPORT_POOL_FILE}'.")
         print("Please make sure both JSON files are in the same directory as this script.")
-        exit(1)
+        # exit(1) <-- REMOVED
     except json.JSONDecodeError:
         print("Error: Could not parse JSON. Please check the format of your pool files.")
-        exit(1)
+        # exit(1) <-- REMOVED
 
 def generate_server_batch():
     """
